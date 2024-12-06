@@ -3,10 +3,9 @@
     "components": [
         {
             "id": "textInput1",
-            "name": "textInput1",
             "properties": {
                 "defaultValue": "",
-                "label": "First Name",
+                "label": "First Nameeeeeeeeeeeeeee",
                 "placeholder": "John"
             },
             "type": "textInput"
@@ -14,12 +13,26 @@
     ],
     "queries": [
         {
-            "id": "d879e8be-f639-4953-9640-af50f44df5fa",
-            "name": "testQ",
+            "id": "aeedae69-010a-43d4-83ee-5add7a9f0bd4",
+            "name": "query0",
             "type": "action",
             "properties": {
-                "spec": {}
-            }
+                "condition": "{{select0.value}}",
+                "spec": {
+                    "headers": [
+                        "Authorization: Bearer {{Credentials.token}}"
+                    ],
+                    "method": "GET",
+                    "url": "https://api.github.com/repos/datadog/{{select0.value}}/pulls?per_page={{table0.pageSize}}\u0026page={{table0.pageIndex + 1}}"
+                }
+            },
+            "events": [
+                {
+                    "callback": "{{() =\u003e textInput0.setValue(JSON.stringify(self.response))}}",
+                    "name": "executionFinished",
+                    "type": "custom"
+                }
+            ]
         }
     ]
 }
