@@ -7,7 +7,7 @@
             "properties": {
                 "defaultValue": "",
                 "label": "First Name",
-                "placeholder": "John"
+                "placeholder": "JohnQA"
             },
             "type": "textInput"
         }
