@@ -7,7 +7,7 @@
             "properties": {
                 "defaultValue": "",
                 "label": "First Name",
-                "placeholder": "John"
+                "placeholder": "App Builder is da bomb"
             },
             "type": "textInput"
         }
